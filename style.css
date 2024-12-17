@@ -1,0 +1,428 @@
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --accent-color: orangered;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.logo-animation {
+  display: flex;
+  gap: 10px;
+}
+
+.letter {
+  font-size: 3rem; /* Use rem for scalability */
+  font-weight: bold;
+  color: var(--accent-color);
+  opacity: 0;
+  animation: fade-in 2.5s ease-in-out forwards;
+}
+
+.letter:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.letter:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem; /* Use rem for padding */
+  background-color: #111;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 1rem; /* Use rem for margin */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem; /* Use rem for font size */
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
+}
+
+.profile-icon {
+  width: 2.5rem; /* Use rem for size */
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.contact-button {
+  padding: 0.5rem 1rem; /* Use rem for padding */
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 1rem; /* Use rem for border radius */
+}
+
+.contact-button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.theme-toggle {
+  padding: 0.5rem 1rem; /* Use rem for padding */
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 0.5rem; /* Use rem for border radius */
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between image and text */
+  padding: 3rem 5%; /* Use percentage for padding */
+}
+
+.image-section {
+  flex: 1; /* Allow the image section to grow */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.image-section img {
+  width: 100%; /* Make image responsive */
+  max-width: 750px; /* Limit max width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0.625rem; /* Use rem for border radius */
+}
+
+.text-section {
+  flex: 1; /* Allow the text section to grow */
+  max-width: 500px; /* Limit max width for text */
+  text-align: left; /* Align text to the left */
+}
+
+.text-section h1 {
+  font-size: 2.25rem; /* Use rem for font size */
+  color: var(--accent-color);
+}
+
+.text-section h2 {
+  font-size: 1.75rem; /* Use rem for font size */
+  margin-top: 0.625rem; /* Use rem for margin */
+}
+
+.text-section h2 span {
+  color: var(--accent-color);
+}
+
+.text-section p {
+  margin-top: 1.25rem; /* Use rem for margin */
+  font-size: 1rem; /* Use rem for font size */
+  line-height: 1.6;
+}
+
+.cv-button {
+  padding: 0.5rem 1rem; /* Use rem for padding */
+  background-color: var(--accent-color);
+  color: var(--bg-color );
+  border: none;
+  border-radius: 0.5rem; /* Use rem for border radius */
+  cursor: pointer;
+}
+
+.cv-button:hover {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Stack elements on smaller screens */
+    padding: 2rem 5%; /* Adjust padding */
+  }
+
+  .image-section {
+    margin-right: 0; /* Remove margin on smaller screens */
+    margin-bottom: 20px; /* Add margin below image */
+  }
+
+  .text-section {
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack navbar items */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .navbar li {
+    margin: 0.5rem 0; /* Adjust margin */
+  }
+
+  .text-section h1,
+  .text-section h2,
+  .about-header h1,
+  .projects h1,
+  .contact h1 {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .text-section p,
+  .about-header p,
+  .contact p {
+    font-size: 0.875rem; /* Adjust font size */
+  }
+
+  .project-card {
+    width: 100%; /* Make project cards full width */
+    max-width: 300px; /* Limit max width */
+  }
+}
+
+/* About Section */
+.about {
+  padding: 3rem 2rem; /* Use rem for padding */
+  background-color: #111;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-header h1 {
+  font-size: 2.625rem; /* Use rem for font size */
+  margin-bottom: 1.25rem; /* Use rem for margin */
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.about-header p {
+  font-size: 1.125rem; /* Use rem for font size */
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 2.5rem; /* Use rem for margin */
+}
+
+.about-skills h2 {
+  font-size: 2rem; /* Use rem for font size */
+  margin-bottom: 1.25rem; /* Use rem for margin */
+  color: var(--accent-color);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem; /* Use rem for gap */
+}
+
+.skill-card {
+  background-color: #222;
+  border: 1px solid var(--accent-color);
+  padding: 1.25rem; /* Use rem for padding */
+  font-size: 1rem; /* Use rem for font size */
+  color: var(--text-color);
+  border-radius: 0.625rem; /* Use rem for border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Projects */
+.projects {
+  padding: 3rem 2rem; /* Use rem for padding */
+  background-color: #111;
+  color: var(--text-color);
+}
+
+.projects h1 {
+  font-size: 2.625rem; /* Use rem for font size */
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 1.875rem; /* Use rem for margin */
+  text-align: center;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem; /* Use rem for gap */
+  padding: 0 2rem; /* Use rem for padding */
+}
+
+.project-card {
+  background-color: #222;
+  border: 1px solid var(--accent-color);
+  padding: 1.25rem; /* Use rem for padding */
+  border-radius: 0.625rem; /* Use rem for border radius */
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project 
+-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.project-card h2 {
+  color: var(--accent-color);
+  font-size: 1.5rem; /* Use rem for font size */
+  margin-bottom: 0.625rem; /* Use rem for margin */
+}
+
+.project-card p {
+  font-size: 1rem; /* Use rem for font size */
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 0.9375rem; /* Use rem for margin */
+}
+
+.project-card a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem; /* Use rem for padding */
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  text-decoration: none;
+  border-radius: 0.3125rem; /* Use rem for border radius */
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.project-card a:hover {
+  background-color: #ff6633;
+  color: var(--text-color);
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 2rem; /* Use rem for padding */
+  text-align: center;
+  background: linear-gradient(to right, #1a1a1a, #000);
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.625rem; /* Use rem for border radius */
+  padding: 2.5rem; /* Use rem for padding */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.contact h1 {
+  font-size: 2.625rem; /* Use rem for font size */
+  margin-bottom: 1.25rem; /* Use rem for margin */
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.contact p {
+  font-size: 1.125rem; /* Use rem for font size */
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 2.5rem; /* Use rem for margin */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Use rem for gap */
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem; /* Use rem for padding */
+  font-size: 1rem; /* Use rem for font size */
+  color: var(--text-color);
+  background: transparent;
+  border: 2px solid #444;
+  border-radius: 0.3125rem; /* Use rem for border radius */
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #bbb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-button {
+  padding: 1rem; /* Use rem for padding */
+  font-size: 1.125rem; /* Use rem for font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 0.3125rem; /* Use rem for border radius */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #ff6633;
+  transform: scale(1.05);
+}
